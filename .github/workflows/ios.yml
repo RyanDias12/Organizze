@@ -37,10 +37,10 @@ jobs:
 
       - name: Build IPA
         run: |
-          flet build ipa --verbose
+          flet build ipa --no-codesign
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
           name: ios-build
-          path: build/ipa/
+          path: build/ipa/*.ipa
