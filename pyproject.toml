@@ -1,0 +1,15 @@
+[project]
+name = "organizze"
+version = "1.0.0"
+
+[tool.flet]
+org = "com.organizze.app"
+product = "Organizze"
+
+[tool.flet.app]
+path = "."
+icon = "logo.png"
+
+[tool.flet.android]
+adaptive_icon_background = "#ffffff"
+adaptive_icon_foreground = "logo.png"
