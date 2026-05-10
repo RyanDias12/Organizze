@@ -39,10 +39,15 @@ jobs:
         run: |
           flet build ipa --yes
 
+      - name: Find .app
+        run: |
+          find build -name "*.app"
+
       - name: Create Payload
         run: |
           mkdir Payload
-          cp -R build/ipa/*.app Payload/
+          APP_PATH=$(find build -name "*.app" | head -n 1)
+          cp -R "$APP_PATH" Payload/
 
       - name: Create IPA
         run: |
